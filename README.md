@@ -57,16 +57,22 @@ str
 
 DB info
 ----------------------------------------------------------------
-Person
-- Sale assistant name + number
-- Amount of transaction (automatic)
-- Transaction (FK1)
-- UPT (items sold/transaction)
+Person sale assistant
+- Sale assistant name + number (FK2) ---one to one---
+[//]: # (- Amount of transaction &#40;automatic&#41;)
+- Transaction number (FK1)  ---many to many---
 - Days worked (Probably when have some transactions per day)
 
 For transaction
-- Sale assistant (FK1)
-- Customer (number or name)
-- Money earned
-- Items per transaction 
+- Transaction number (FK1) ---many to many---
+- Sale assistant (FK2) ---one to one---
+- Customer number (FK3) ---one to one---
+- Amount of money
+- Items per transaction
 - Date 
+
+Customer 
+- Customer name 
+- Customer Number (FK3) ---one to one---
+- Transaction (FK1) ---many to many---
+- Date registration 
