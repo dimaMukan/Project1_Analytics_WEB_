@@ -1,6 +1,7 @@
 A Project with analytics/databases/Web 
 Plotly + Pandas 
 
+-year_statistics
 
 Anually
 ----------------------------------------------------------------
@@ -54,17 +55,54 @@ how much each category earned
 str
 
 
+Info about customer
+----------------------------------------------------------------
+We have place to enter customer number to find
+information about his/her 
+data + history of transaction 
+- place to enter number 
+- button to find
+
+If customer not found ask to do a registration(Maybe)
+
+
+Add Transaction, Page 
+----------------------------------------------------------------
+We have place to put 
+- Amount of money 
+- Number of Sale Assistant
+(if num is not found exception Error)
+
+- Number of customer 
+(if num is not found, button to register a customer appears and text
+'Please register and back')
+(the page after pressing a button opens on a new page)
+
+- amount of items sold 
+- date (no more than today )
+
+
+Registration of customer, Page
+----------------------------------------------------------------
+We can do a registration via admin or vir this page which presents registration page
+We have place to put info 
+- Name (necessary!)
+- Surname (necessary!)
+- Date of Birthday (not necessary)
+- Address (not necessary)
+- E-mail (necessary!)
+
 
 DB info
 ----------------------------------------------------------------
 Person sale assistant
 - Sale assistant name + number (FK2) ---one to one---
 [//]: # (- Amount of transaction &#40;automatic&#41;)
-- Transaction number (FK1)  ---many to many---
+- Transaction number (FK1)  ---one to many---
 - Days worked (Probably when have some transactions per day)
 
 For transaction
-- Transaction number (FK1) ---many to many---
+- Transaction number (FK1) ---one to many---(main)
 - Sale assistant (FK2) ---one to one---
 - Customer number (FK3) ---one to one---
 - Amount of money
@@ -73,6 +111,13 @@ For transaction
 
 Customer 
 - Customer name 
-- Customer Number (FK3) ---one to one---
-- Transaction (FK1) ---many to many---
+- Customer Number (FK3) ---one to one---(main)
+- Transaction number (FK1) ---one to many---
 - Date registration 
+- Gender (choices)
+- E-mail
+- Address
+- Post Code
+- 
+
+
