@@ -1,7 +1,6 @@
 A Project with analytics/databases/Web 
 Plotly + Pandas 
 
--year_statistics
 
 Anually
 ----------------------------------------------------------------
@@ -96,7 +95,7 @@ We have place to put info
 DB info
 ----------------------------------------------------------------
 Person sale assistant
-- Sale assistant name + number (FK2) ---one to one---
+- Sale assistant name + number (FK2) ---one to one--- (main)
 [//]: # (- Amount of transaction &#40;automatic&#41;)
 - Transaction number (FK1)  ---one to many---
 - Days worked (Probably when have some transactions per day)
@@ -113,11 +112,15 @@ Customer
 - Customer name 
 - Customer Number (FK3) ---one to one---(main)
 - Transaction number (FK1) ---one to many---
+
+
+all next info mostly for registration and not necessary to be given
 - Date registration 
 - Gender (choices)
 - E-mail
 - Address
 - Post Code
-- 
+- Additional details
+
 
 

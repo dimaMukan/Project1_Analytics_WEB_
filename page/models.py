@@ -25,15 +25,14 @@ import page
 
 class Transaction(models.Model):
     transaction_number = models.IntegerField() #one to many(main)
-    sale_assistant = models.OneToOneField(page.models.Sale_assistant, on_delete=models.SET_NULL) #one to one
-    customer_number = models.OneToOneField(page.models.Customer, on_delete=models.SET_NULL) #one to one
     amount_of_money = models.FloatField()
     items_per_transaction = models.IntegerField()
     date = models.DateField()
 
 
     def __str__(self):
-        return f"Transaction: \ncustomer:{str(self.customer_number)} \nAmount of money{str(self.amount_of_money)} \nItems per transaction{str(self.items_per_transaction)}\n Date{str(self.date)}"
+        return f'{str(self.transaction_number)}'
+
 
 class Customer(models.Model):
     MALE = 'M'
@@ -42,25 +41,31 @@ class Customer(models.Model):
         (MALE, 'Male'),
         (FEMALE, 'Female'),
     ]
-    customer_name = models.CharField()
+    customer_name = models.CharField(max_length=100,blank=True)
     customer_number = models.IntegerField()
-    transaction_number = models.ForeignKey(Transaction,on_delete=models.CASCADE, null=True)
+    transaction_number = models.ForeignKey(Transaction,on_delete=models.CASCADE, null=True,blank=True)
+
     date_registered = models.DateField()
     gender = models.CharField(max_length=1,choices=Genders, default=MALE)
-    email = models.EmailField()
+    email = models.EmailField(blank=True)
+    address = models.CharField(max_length=100,blank=True)
+    House_number = models.IntegerField(blank=True,null=True)
+    Post_Code = models.CharField(max_length=15,blank=True)
+    Additional_details = models.CharField(max_length=100,blank=True)
 
     def __str__(self):
         return f""
 
 
 class Sale_assistant(models.Model):
-    sale_assistant_name = models.CharField()
-    sale_assistant_surname = models.CharField()
+
+    sale_assistant_name = models.CharField(max_length=100,blank=True)
+    sale_assistant_surname = models.CharField(max_length=100,blank=True)
 
     sale_assistant_number = models.IntegerField() #one to one
     transaction_number = models.ForeignKey(Transaction, on_delete=models.CASCADE) #one to many
     # days_worked = models.DateField() ????
-    ...
+
 
     def __str__(self):
         return f""
