@@ -1,4 +1,4 @@
-A Project with analytics/databases/Web 
+§§A Project with analytics/databases/Web 
 Plotly + Pandas 
 
 
